@@ -1,0 +1,16 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+ 
+}
+body{
+  background: #e2eaf7 ;
+}
+:root {
+  --color-principal: #4a6bc4;
+  --color-secundario: #ffffff;
+  --color-fondo: #a8c3e8 ;
+  --t-principal:#232948;
+  --t-seacundaro:#a8c3e8;
+}
