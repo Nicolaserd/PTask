@@ -7,7 +7,7 @@
     margin: 0 auto;
     margin-bottom: 40px;
     transition: transform 0.3s, box-shadow 0.3s; /* Transición suave */
-    background: var(--color-fondo);
+    background: lightgray;
     cursor: text;
 }
 
@@ -18,7 +18,7 @@
 
 .container-search .input-search{
     display: flex;
-    background: var(--color-fondo);
+    background: lightgray;
     text-align: center;
     border: none;
     outline: none; 

@@ -1,17 +1,60 @@
 .completado-context{
-    --primaryColor: #94e199;
+    --primaryColorComplete: #07b22d;
+    --primaryColorDelete: #ed2c3c;
+}
+.completed-context{
+    --color-fondo: #0d5a21;
+    --primaryColorComplete: lightgray;
+    --t-principal: lightgray;
 }
 
 .context-list{
     display:  flex;
     width: 400px;
     padding: 15px;
-    border: 1px solid #94e199;
+    background: var( --color-fondo);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
     margin-bottom: 20px;
     border-radius: 20px;
-    justify-content: center;
+    justify-content: space-evenly;
     
 }
 
+.context-list .context-category{
+    color: var(--t-principal);
+    text-wrap: nowrap;
+    overflow: hidden;
+    width: 100px;
+    font-weight: 700;
+    font-size: 15px;
+    margin-right: 5px;
+}
+.context-list .context-peso{
+    color: var(--t-principal);
+    width: 50px;
+    text-wrap: nowrap;
+    overflow: hidden;
+    font-weight: 400;
+    font-size: 15px;
+    margin-right: 10px;
+}
+.context-list  .icono-context--add{
+    color: var(--primaryColorComplete);
+    text-wrap: nowrap;
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 15px;
+    width: 70px;
+    cursor: pointer;
+
+}
+.context-list  .icono-context--delete{
+    color: var(--primaryColorDelete);
+    text-wrap: nowrap;
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 15px;
+    width: 70px;
+    cursor: pointer;
+}

@@ -6,11 +6,20 @@ import Search from "../../components/context/Search.jsx"
 import ContextList from "../../components/context/ContextList.jsx"
 const Context = ()=>{
  const contextData = listContext()
- const suma = contextData.reduce((cont,context)=>cont+context.puntaje,0)
+ const [contextDataNew,setContextDataNew]= useState(contextData)
+ const suma = contextDataNew.reduce((cont,context)=>cont+context.puntaje,0)
  const [searchContext,setSearchContext]= useState("")
- const searchedContext = contextData.filter((context)=>{
+ const searchedContext = contextDataNew.filter((context)=>{
    return context.categoria.toLowerCase().includes(searchContext.toLowerCase())
  })
+ const completeContext = (categoria)=>{
+   const newContext =[...contextDataNew]
+   const contextIndex =newContext.findIndex(
+      (todo)=>todo.categoria===categoria
+   )
+   newContext[contextIndex].completed=true
+   setContextDataNew(newContext)
+ }
  return(
     <div className="context">
       <h1>context</h1>
@@ -25,11 +34,13 @@ const Context = ()=>{
             <p>Nada que mostrar</p>
          ):
          (
-            searchedContext.map((Context, index)=>(
+            searchedContext.map((Context)=>(
                <ContextList
-                  key={index}
+                  key={Context.categoria}
                   categoria = {Context.categoria}
+                  isCompleted={Context.completed}
                   peso = {Context.puntaje/suma}
+                  onComplete={()=>completeContext(Context.categoria)}
                  
                />
              
@@ -37,6 +48,7 @@ const Context = ()=>{
          )
          
        }
+
        <AddContext
 
        />
